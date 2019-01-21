@@ -10,8 +10,6 @@ namespace Industry_Connect_Home.Pages
 {
     class TimeAndMaterial
     {
-        private const int V = 5;
-
         public void addTM(IWebDriver webDriver)
 
             {
@@ -25,7 +23,7 @@ namespace Industry_Connect_Home.Pages
                 webDriver.FindElement(By.XPath("//*[@id='TypeCode_listbox']/li[2]")).Click();
 
                 //Enter a code
-                webDriver.FindElement(By.XPath("//*[@id='Code']")).SendKeys("testCode");
+                webDriver.FindElement(By.XPath("//*[@id='Code']")).SendKeys("testCodefix1");
 
                 //Enter a description
                 webDriver.FindElement(By.XPath("//*[@id='Description']")).SendKeys("testDescription");
@@ -71,7 +69,7 @@ namespace Industry_Connect_Home.Pages
             webDriver.FindElement(By.XPath(".//*[@title='Go to the last page']")).Click();
 
             webDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[8]/td[1]"));
-            webDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[8]/td[5]/a[1]")).Click();
+            webDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[9]/td[5]/a[1]")).Click();
             //webDriver.SwitchTo().Alert().Accept();
 
             //Edit a code
@@ -83,33 +81,41 @@ namespace Industry_Connect_Home.Pages
             webDriver.FindElement(By.XPath("//*[@id='Description']")).SendKeys("testDescription2");
 
             //Edit a price
-            IWebElement PriceTextbox = webDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]"));
-            PriceTextbox.Click();
-           // PriceTextbox.Clear();
-            IWebElement Price = webDriver.FindElement(By.XPath("//*[@id='Price']"));
-            Price.SendKeys("5");
-            //Price1.SendKeys(ExcelLibraryHelpers.ReadData(2, "Price1"));
+            //IWebElement PriceTextbox = webDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]"));
+            //PriceTextbox.Click();
+            //Thread.Sleep(1000);
+            //PriceTextbox.Clear();
+            //IWebElement Price = webDriver.FindElement(By.XPath("//*[@id='Price']"));
+            //Price.Clear();
+            //Price.SendKeys("5");
+            //Thread.Sleep(2000);
+            ////Price1.SendKeys(ExcelLibraryHelpers.ReadData(2, "Price1"));
+
+            webDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]")).Click();
+            webDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[2]")).Clear();
+            webDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]")).SendKeys("5");
+
 
             //Click on Save button
             webDriver.FindElement(By.XPath("//*[@id='SaveButton']")).Click();
 
 
-            Thread.Sleep(1000);
-            webDriver.FindElement(By.XPath(".//*[@title='Go to the last page']")).Click();
+            //Thread.Sleep(1000);
+            //webDriver.FindElement(By.XPath(".//*[@title='Go to the last page']")).Click();
 
 
 
-            if (webDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[2]/td[1]")).Text == "testCode1")
+            //if (webDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[2]/td[1]")).Text == "testCode1")
 
-            {
-                Console.WriteLine("Time and Material Edit Successully");
-            }
+            //{
+            //    Console.WriteLine("Time and Material Edit Successully");
+            //}
 
-            else
+            //else
 
-            {
-                Console.WriteLine("Test Failed");
-            }
+            //{
+            //    Console.WriteLine("Test Failed");
+            //}
 
 
         }
