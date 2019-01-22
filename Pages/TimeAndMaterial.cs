@@ -23,7 +23,7 @@ namespace Industry_Connect_Home.Pages
                 webDriver.FindElement(By.XPath("//*[@id='TypeCode_listbox']/li[2]")).Click();
 
                 //Enter a code
-                webDriver.FindElement(By.XPath("//*[@id='Code']")).SendKeys("testCodefix1");
+                webDriver.FindElement(By.XPath("//*[@id='Code']")).SendKeys("testCode");
 
                 //Enter a description
                 webDriver.FindElement(By.XPath("//*[@id='Description']")).SendKeys("testDescription");
@@ -100,22 +100,20 @@ namespace Industry_Connect_Home.Pages
             webDriver.FindElement(By.XPath("//*[@id='SaveButton']")).Click();
 
 
-            //Thread.Sleep(1000);
-            //webDriver.FindElement(By.XPath(".//*[@title='Go to the last page']")).Click();
+            
+            webDriver.FindElement(By.XPath(".//*[@title='Go to the last page']")).Click();
 
+            if (webDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[2]/td[1]")).Text == "testCode1")
 
+            {
+                Console.WriteLine("Time and Material Edit Successully");
+            }
 
-            //if (webDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[2]/td[1]")).Text == "testCode1")
+            else
 
-            //{
-            //    Console.WriteLine("Time and Material Edit Successully");
-            //}
-
-            //else
-
-            //{
-            //    Console.WriteLine("Test Failed");
-            //}
+            {
+                Console.WriteLine("Test Failed");
+            }
 
 
         }
