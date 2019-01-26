@@ -9,29 +9,66 @@ namespace Industry_Connect_Home.StepDefinitions
     [Binding]
     public class TimeAndMaterialSteps
     {
-        [Given(@"User can login with valid credentials")]
-        public void GivenUserCanLoginWithValidCredentials()
+        //Run Background Steps
+        [Given(@"Shopper is using ""(.*)"" browser")]
+        public void GivenShopperIsUsingBrowser(string browser)
         {
-            CommonDriver.webDriver = new ChromeDriver();
-            CommonDriver.webDriver.Manage().Window.Maximize();
+            Browser.Driverinitialize(browser);
+        }
 
-            LoginPage LoginObject = new LoginPage();
-            LoginObject.loginSteps(CommonDriver.webDriver);
+        [When(@"User navigate to ""(.*)"" url")]
+        public void WhenUserNavigateToUrl(string websiteUrl)
+        {
+            Browser.webDriver.Navigate().GoToUrl(websiteUrl);
         }
         
-        [When(@"User click Administration and Time and Material from dropdown")]
-        public void WhenUserClickAdministrationAndTimeAndMaterialFromDropdown()
+       
+        [When(@"User enter valid credentials ""(.*)"" and ""(.*)""")]
+        public void WhenUserEnterValidCredentialsAnd(string username, string password)
+        {
+            LoginPage LoginObject = new LoginPage();
+            LoginObject.loginSteps(username, password);
+        }
+
+
+        [Then(@"User is able to Login")]
+        public void ThenUserIsAbleToLogin()
+        {
+            LoginPage LoginObject = new LoginPage();
+            LoginObject.verifyLogin();
+        }
+
+        // Add New Time and Material item
+        [Given(@"User click Administration and Time and Material from dropdown")]
+        public void GivenUserClickAdministrationAndTimeAndMaterialFromDropdown()
         {
             HomePage HomeObject = new HomePage();
-            HomeObject.naviagteToTM(CommonDriver.webDriver);
+            HomeObject.naviagteToTM();
         }
-        
+
+        [When(@"User click on Create New button")]
+        public void WhenUserClickOnCreateNewButton()
+        {
+            TimeAndMaterial ObjectTM = new TimeAndMaterial();
+            ObjectTM.clickCreateNewButton();
+        }
+
+
         [Then(@"User should able to add new Time and Material item")]
         public void ThenUserShouldAbleToAddNewTimeAndMaterialItem()
         {
-            TimeAndMaterial TimeMaterialObject = new TimeAndMaterial();
-            TimeMaterialObject.addTM(CommonDriver.webDriver);
-            TimeMaterialObject.deleteTM(CommonDriver.webDriver);
+            TimeAndMaterial ObjectTM = new TimeAndMaterial();
+            ObjectTM.addNewTM();
         }
+        [Then(@"Verify new time and material is added")]
+        public void ThenVerifyNewTimeAndMaterialIsAdded()
+        {
+            TimeAndMaterial ObjectTM = new TimeAndMaterial();
+            ObjectTM.verifyAddTM();
+        }
+
+
+
+
     }
 }

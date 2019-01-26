@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Industry_Connect_Home.Helpers;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,12 @@ namespace Industry_Connect_Home.Pages
 {
     class HomePage
     {
-        public void naviagteToTM(IWebDriver driver)
+        public void naviagteToTM()
 
         {
-            driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a")).Click();
+            Browser.webDriver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a")).Click();
             //Click time and material from dropdown
-            driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a")).Click();
+            Browser.webDriver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a")).Click();
         }
     }
 }

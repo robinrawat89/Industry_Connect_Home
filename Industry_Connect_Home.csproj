@@ -72,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\Browser.cs" />
-    <Compile Include="Helpers\CommonDriver.cs" />
     <Compile Include="SpecflowFeatures\TimeAndMaterial.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,7 +82,6 @@
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\TimeAndMaterial.cs" />
-    <Compile Include="Test\Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

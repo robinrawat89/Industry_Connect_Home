@@ -10,26 +10,26 @@ namespace Industry_Connect_Home.Pages
 {
     class LoginPage 
     {
-        public void loginSteps(IWebDriver webDriver)
+        public void loginSteps(string userName, string passWord)
         {
-            // Enter the URL
-            webDriver.Navigate().GoToUrl("http://horse-dev.azurewebsites.net/Account/Login?ReturnUrl=%2f");
-
+            
             //Locate username textbox
-
-            IWebElement Username = webDriver.FindElement(By.Id("UserName"));
-            Username.SendKeys("hari");
+            IWebElement Username = Browser.webDriver.FindElement(By.Id("UserName"));
+            Username.SendKeys(userName);
 
             //Locate password textbox
-            IWebElement Password = webDriver.FindElement(By.Id("Password"));
-            Password.SendKeys("123123");
+            IWebElement Password = Browser.webDriver.FindElement(By.Id("Password"));
+            Password.SendKeys(passWord);
 
             //LOcate Login button
-            IWebElement Login = webDriver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
+            IWebElement Login = Browser.webDriver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
             Login.Click();
+        }
 
+        public void verifyLogin()
+        { 
             //Verify login
-            IWebElement hello_hari = webDriver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
+            IWebElement hello_hari = Browser.webDriver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
             if (hello_hari.Text == "Hello hari")
             {
                 Console.Write("test passed");
