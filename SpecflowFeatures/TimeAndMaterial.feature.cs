@@ -73,8 +73,8 @@ namespace Industry_Connect_Home.SpecflowFeatures
         public virtual void FeatureBackground()
         {
 #line 6
- #line 7
-testRunner.Given("Shopper is using \"Chrome\" browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 7
+testRunner.Given("Shopper is using \"Firefox\" browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
 testRunner.When("User navigate to \"http://horse-dev.azurewebsites.net/Account/Login?ReturnUrl=%2f\"" +
                     " url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -86,25 +86,67 @@ testRunner.Then("User is able to Login", ((string)(null)), ((TechTalk.SpecFlow.T
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add new Time and Material item")]
+        [NUnit.Framework.DescriptionAttribute("1 Add new Time and Material item")]
         [NUnit.Framework.CategoryAttribute("BasicFlows")]
-        public virtual void AddNewTimeAndMaterialItem()
+        public virtual void _1AddNewTimeAndMaterialItem()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new Time and Material item", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 Add new Time and Material item", null, new string[] {
                         "BasicFlows"});
 #line 15
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
- this.FeatureBackground();
+this.FeatureBackground();
 #line 16
- testRunner.Given("User click Administration and Time and Material from dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+   testRunner.Given("User click Administration and Time and Material from dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
- testRunner.When("User click on Create New button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.When("User click on Create New button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
- testRunner.Then("User should able to add new Time and Material item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.Then("User should able to add new Time and Material item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
- testRunner.And("Verify new time and material is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+   testRunner.And("Verify new time and material is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("2  Edit the new Time and Material item")]
+        public virtual void _2EditTheNewTimeAndMaterialItem()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2  Edit the new Time and Material item", null, ((string[])(null)));
+#line 21
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line 22
+   testRunner.Given("User click Administration and Time and Material from dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+   testRunner.When("User navigated to end page of the items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+   testRunner.Then("User should able to edit new Time and Material item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+   testRunner.And("Verify new time and material is edited", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3  Delete the new Time and Material item")]
+        public virtual void _3DeleteTheNewTimeAndMaterialItem()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3  Delete the new Time and Material item", null, ((string[])(null)));
+#line 27
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line 28
+   testRunner.Given("User click Administration and Time and Material from dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 29
+   testRunner.When("User navigated to end page of the items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+   testRunner.Then("User should able to delete edited Time and Material item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

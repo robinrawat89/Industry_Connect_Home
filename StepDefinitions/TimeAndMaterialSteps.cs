@@ -67,8 +67,37 @@ namespace Industry_Connect_Home.StepDefinitions
             ObjectTM.verifyAddTM();
         }
 
+        // Edit the time and material item
+        [When(@"User navigated to end page of the items")]
+        public void WhenUserNavigatedToEndPageOfTheItems()
+        {
+            TimeAndMaterial ObjectTM = new TimeAndMaterial();
+            ObjectTM.navigateToLastPage();
+        }
 
+        [Then(@"User should able to edit new Time and Material item")]
+        public void ThenUserShouldAbleToEditNewTimeAndMaterialItem()
+        {
+            TimeAndMaterial ObjectTM = new TimeAndMaterial();
+            ObjectTM.editTM();
+        }
 
+        [Then(@"Verify new time and material is edited")]
+        public void ThenVerifyNewTimeAndMaterialIsEdited()
+        {
+            TimeAndMaterial ObjectTM = new TimeAndMaterial();
+            ObjectTM.verifyEditTM();
+        }
+
+        //Delete the Timeand material
+        [Then(@"User should able to delete edited Time and Material item")]
+        public void ThenUserShouldAbleToDeleteEditedTimeAndMaterialItem()
+        {
+            TimeAndMaterial ObjectTM = new TimeAndMaterial();
+            ObjectTM.deleteTM();
+        }
+
+        
 
     }
 }
