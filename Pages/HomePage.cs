@@ -13,9 +13,10 @@ namespace Industry_Connect_Home.Pages
         public void naviagteToTM()
 
         {
-            Browser.webDriver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a")).Click();
+            //Click on Administration
+            Browser.webDriver.FindElement(By.XPath("//*[@class='dropdown']//*[text()='Administration ']")).Click();
             //Click time and material from dropdown
-            Browser.webDriver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a")).Click();
+            Browser.webDriver.FindElement(By.XPath("//*[@class='menuitem']//*[text()='Time & Materials']")).Click();
         }
     }
 }

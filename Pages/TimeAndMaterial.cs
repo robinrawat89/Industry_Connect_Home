@@ -16,7 +16,7 @@ namespace Industry_Connect_Home.Pages
         {
             //Click on Create New button
 
-            Browser.webDriver.FindElement(By.XPath("//*[@id='container']/p/a")).Click();
+            Browser.webDriver.FindElement(By.XPath("//*[@id='container']//*[text()='Create New']")).Click();
         }
 
         public void addNewTM()
@@ -24,22 +24,22 @@ namespace Industry_Connect_Home.Pages
         {
 
             //Select Typecode
-            Browser.webDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span")).Click();
+            Browser.webDriver.FindElement(By.XPath("//*[@class='form-group']//*[text()='select']")).Click();
             Thread.Sleep(1000);
-            Browser.webDriver.FindElement(By.XPath("//*[@id='TypeCode_listbox']/li[2]")).Click();
+            Browser.webDriver.FindElement(By.XPath("//*[@id='TypeCode_listbox']//*[text()='Time']")).Click();
 
             //Enter a code
-            Browser.webDriver.FindElement(By.XPath("//*[@id='Code']")).SendKeys("testCode");
+            Browser.webDriver.FindElement(By.Id("Code")).SendKeys("testCode");
 
             //Enter a description
-            Browser.webDriver.FindElement(By.XPath("//*[@id='Description']")).SendKeys("testDescription");
+            Browser.webDriver.FindElement(By.Id("Description")).SendKeys("testDescription");
 
             //Enter a price
             Browser.webDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]")).Clear();
             Browser.webDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]")).SendKeys("2");
 
             //Click on Save button
-            Browser.webDriver.FindElement(By.XPath("//*[@id='SaveButton']")).Click();
+            Browser.webDriver.FindElement(By.Id("SaveButton")).Click();
             Thread.Sleep(1000);
 
         }
@@ -49,7 +49,9 @@ namespace Industry_Connect_Home.Pages
 
             //Check if Time and Material is created successfully
             Thread.Sleep(1000);
-            Browser.webDriver.FindElement(By.XPath(".//*[@title='Go to the last page']")).Click();
+            Browser.webDriver.FindElement(By.XPath("//*[@id='tmsGrid']//*[text()='Go to the last page']")).Click();
+
+            Browser.webDriver.FindElement(By.XPath(""));
 
             if (Browser.webDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[2]/td[1]")).Text == "testCode")
 
