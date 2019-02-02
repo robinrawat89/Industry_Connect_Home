@@ -54,12 +54,21 @@ namespace Industry_Connect_Home.StepDefinitions
         }
 
 
-        [Then(@"User should able to add new Time and Material item")]
-        public void ThenUserShouldAbleToAddNewTimeAndMaterialItem()
-        {
-            TimeAndMaterial ObjectTM = new TimeAndMaterial();
-            ObjectTM.addNewTM();
+        //[Then(@"User should able to add new Time and Material item")]
+        //public void ThenUserShouldAbleToAddNewTimeAndMaterialItem()
+        //{
+        //    TimeAndMaterial ObjectTM = new TimeAndMaterial();
+        //    ObjectTM.addNewTM();
+        //}
+
+        [Then(@"User should able to add (.*), (.*), (.*) and (.*)")]
+        public void ThenUserShouldAbleToAddAnd(string typeCode, string code, string description, string pricePerunit)
+        {           
+                TimeAndMaterial ObjectTM = new TimeAndMaterial();
+                ObjectTM.addNewTM(typeCode,code,description,pricePerunit);            
+           
         }
+
         [Then(@"Verify new time and material is added")]
         public void ThenVerifyNewTimeAndMaterialIsAdded()
         {
